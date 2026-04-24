@@ -1,0 +1,20 @@
+# Python (виртуальное окружение и кэш)
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Allure (результаты тестов и сами отчеты)
+allure-results/
+allure-report/
+
+# Настройки среды (секреты, токены, пароли)
+.env
+
+# Playwright (скриншоты и видео, если они сохраняются)
+test-results/
+
+# IDE (настройки PyCharm или VS Code)
+.idea/
+.vscode/
