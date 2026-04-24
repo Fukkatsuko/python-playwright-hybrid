@@ -41,11 +41,13 @@ Tests are structured by Features and Stories to align technical results with bus
    ```bash
    playwright install
    ```
-3. Run tests:
+3. Create a .env file based on .env.example
+
+4. Run tests:
    ```bash
    pytest
    ```
-4. Generate Allure report:
+5. Generate Allure report:
    ```bash
    allure serve allure-results
    ```
