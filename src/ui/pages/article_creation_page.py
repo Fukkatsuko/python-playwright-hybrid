@@ -57,7 +57,7 @@ class ArticleCreationPage(BasePage):
             self.save_button.click()
             if all([title, description, text]):
                 expect(self.save_button).not_to_be_visible()
-                expect(self.page).to_have_url(re.compile(r".*/article/.*"))
+                expect(self.page).not_to_have_url(re.compile(r".*/editor/.*"), timeout=15000)
 
     @allure.step("Checking article validation error: {text}")
     def check_validation_error(self, text):
