@@ -20,8 +20,6 @@ class MainPage(BasePage):
         self.empty_feed_message = self.page.get_by_text("No articles are here... yet.")
 
         self.tags = self.page.locator(".tag-list a")
-        self.active_tag_tab = self.page.locator(".feed-toggle .nav-item .nav-link.active")
-
 
     @allure.step("Click the 'New Article' button in the header")
     def click_new_article_button(self):
@@ -38,7 +36,6 @@ class MainPage(BasePage):
             self.tags.first.click()
 
         with allure.step(f"Checking that the {tag_name} tab is now active"):
-            # expect(self.active_tag_tab).to_contain_text(tag_name)
             active_tag_locator = self.page.locator(".feed-toggle .nav-link.active").get_by_text(tag_name)
             expect(active_tag_locator).to_be_visible()
 
