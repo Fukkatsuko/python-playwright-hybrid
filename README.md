@@ -24,7 +24,7 @@ This project is a high-performance Hybrid Test Automation Framework designed to 
 * **Allure** (Reporting)
 
 ## 📂 Project Structure
-
+```text
 ├── .github/workflows/  # Settings CI/CD (GitHub Actions)
 ├── src/
 │   ├── api/           
@@ -38,6 +38,7 @@ This project is a high-performance Hybrid Test Automation Framework designed to 
 │   └── hybrid/        # Complex scenarios (API setup + UI check)
 ├── utils/             # Auxiliary tools
 └── pytest.ini         # Configuration of tests and markers
+```
 
 ## 📊 Reporting & Visibility
 The framework integrates with Allure Report to provide deep visibility into test results. 
