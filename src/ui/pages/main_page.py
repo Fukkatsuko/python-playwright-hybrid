@@ -38,7 +38,9 @@ class MainPage(BasePage):
             self.tags.first.click()
 
         with allure.step(f"Checking that the {tag_name} tab is now active"):
-            expect(self.active_tag_tab).to_contain_text(tag_name)
+            # expect(self.active_tag_tab).to_contain_text(tag_name)
+            active_tag_locator = self.page.locator(".feed-toggle .nav-link.active").get_by_text(tag_name)
+            expect(active_tag_locator).to_be_visible()
 
     def click_the_first_article_in_global_feed(self):
         expect(self.first_article_link).to_be_visible()
