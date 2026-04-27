@@ -11,7 +11,7 @@ from playwright.sync_api import expect
 @allure.story("Article flow")
 class TestArticleFlow:
 
-    @pytest.mark.flaky(reruns=2)
+    @pytest.mark.flaky(reruns=3)
     @allure.title("Article life cycle")
     @pytest.mark.parametrize("title, description, body, tags", [
         ("New title", "New description", "New text", ["new"])

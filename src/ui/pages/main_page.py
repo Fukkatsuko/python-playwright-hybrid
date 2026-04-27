@@ -20,7 +20,8 @@ class MainPage(BasePage):
         self.empty_feed_message = self.page.get_by_text("No articles are here... yet.")
 
         self.tags = self.page.locator(".tag-list a")
-        self.active_tag_tab = self.page.locator(".feed-toggle .nav-link.active")
+        self.active_tag_tab = self.page.locator(".feed-toggle .nav-item .nav-link.active")
+
 
     @allure.step("Click the 'New Article' button in the header")
     def click_new_article_button(self):
