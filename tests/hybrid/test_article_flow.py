@@ -48,11 +48,12 @@ class TestArticleFlow:
                 tags=updated_data["tags"]
             )
 
-            expect(article_page.page).not_to_have_url(re.compile(f".*/article/{slug}$"), timeout=15000)
             article_page.page.wait_for_timeout(2000)
-            expect(article_page.article_title).to_have_text(updated_data["title"], timeout=10000)
+            expect(article_page.article_title).to_have_text(updated_data["title"], timeout=15000)
+            expect(article_page.page).not_to_have_url(re.compile(f".*/article/{slug}$"))
 
             slug_new = article_page.page.url.split('/')[-1]
+            assert slug_new != slug
 
         with allure.step("Check edited article"):
             article_page.check_attributes_of_article(
