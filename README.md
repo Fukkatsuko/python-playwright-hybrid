@@ -1,5 +1,7 @@
 # Hybrid Test Automation Framework (Conduit & Petstore)
 
+[![Playwright Tests](https://github.com/Fukkatsuko/python-playwright-hybrid/actions/workflows/main.yml/badge.svg)](https://github.com/Fukkatsuko/python-playwright-hybrid/actions/workflows/main.yml)
+
 ## 📌 Project Overview
 This project is a high-performance Hybrid Test Automation Framework designed to test two distinct service ecosystems:
 1. **Conduit (Blogging Platform)**: A social media platform. The framework uses a hybrid (UI + API) approach to ensure speed and reliability.
@@ -20,6 +22,22 @@ This project is a high-performance Hybrid Test Automation Framework designed to 
 * **Requests** (API Testing)
 * **Pydantic** (Data Modeling & Validation)
 * **Allure** (Reporting)
+
+## 📂 Project Structure
+
+├── .github/workflows/  # Settings CI/CD (GitHub Actions)
+├── src/
+│   ├── api/           
+│   │    ├── clients/  # Clients for working with API (BaseClient, ConduitClient etc.)
+│   │    └── models/   # Pydantic models for data validation
+│   ├── config/
+│   └── ui/pages/      # Page Object Model (MainPage, ArticlePage etc.)
+├── tests/
+│   ├── api/           # Pure API tests (PetStore)
+│   ├── ui/            # UI tests (navigation, visibility etc.)
+│   └── hybrid/        # Complex scenarios (API setup + UI check)
+├── utils/             # Auxiliary tools
+└── pytest.ini         # Configuration of tests and markers
 
 ## 📊 Reporting & Visibility
 The framework integrates with Allure Report to provide deep visibility into test results. 
