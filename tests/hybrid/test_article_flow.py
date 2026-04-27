@@ -33,6 +33,8 @@ class TestArticleFlow:
         with allure.step("Edit article"):
             article_page.click_edit_article()
 
+            expect(article_creation_page.page).to_have_url(re.compile(r".*/editor/.*"))
+
             rand_id = random.randint(100, 999)
             updated_data = {
                 "title": f"{title} UPD {rand_id}",
