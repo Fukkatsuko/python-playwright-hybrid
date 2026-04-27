@@ -50,14 +50,16 @@ class ArticleCreationPage(BasePage):
                 self.tags_field.fill(tags)
                 self.tags_field.press("Enter")
 
-            self.page.locator("body").click()
+            self.page.mouse.click(0, 0)
+
             self.save_button.wait_for(state="visible")
-            self.save_button.scroll_into_view_if_needed()
             self.page.wait_for_timeout(500)
+
             self.save_button.click()
+
             if all([title, description, text]):
-                expect(self.save_button).not_to_be_visible()
                 expect(self.page).not_to_have_url(re.compile(r".*/editor/.*"), timeout=15000)
+                expect(self.save_button).not_to_be_visible()
 
     @allure.step("Checking article validation error: {text}")
     def check_validation_error(self, text):
